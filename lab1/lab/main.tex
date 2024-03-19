@@ -1,0 +1,43 @@
+\documentclass[a4paper, oneside]{article}
+
+\usepackage[left=3cm, top=2cm, right=1.5cm, bottom=2cm]{geometry}
+\usepackage{pgfplots}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage[LGR,T2A]{fontenc}
+\usepackage{multicol}
+\usepackage{soul}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{soulutf8}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{indentfirst}
+\usepackage{makecell}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{booktabs}
+\usepackage{verbatim}
+\definecolor{BlueGreen}{rgb}{49,152,255}
+\definecolor{Violet}{rgb}{120,80,120}
+\usepackage[unicode, colorlinks, urlcolor=blue, linkcolor=green, pagecolor=blue]{hyperref}
+\definecolor{green}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{
+ numbers=left,
+ title=\lstname,
+ language=SQL,
+ numberstyle=\tiny\color{gray},
+ breaklines=true,
+ keywordstyle=\color{blue},          % Стиль ключевых слов
+ commentstyle=\color{green},       % Стиль комментариев
+ stringstyle=\color{mauve}
+}
+
+\begin{document}
+    \input{tex/front_page}
+    \input{tex/main_page}
+\end{document}

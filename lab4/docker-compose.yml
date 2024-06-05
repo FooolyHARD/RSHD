@@ -1,0 +1,42 @@
+version: '3'
+
+services:
+  master:
+    container_name: master
+    restart: unless-stopped
+    image: postgres:15.7
+    ports:
+      - "9001:5432"
+    environment:
+      - PGDATA=/var/lib/postgresql/data
+      - PGENCODING=UTF8
+      - PGLOCALE=en_US.UTF8
+      - PGUSERNAME=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - /Users/arsenykonovalov/programming_itmo/RSHD/lab4/master/pg_data:/var/lib/postgresql/data
+    networks:
+      - brigada
+
+  slave:
+    container_name: slave
+    restart: unless-stopped
+    image: postgres:15.7
+    ports:
+      - "9002:5432"
+    depends_on:
+      - master
+    environment:
+      - PGDATA=/var/lib/postgresql/data
+      - PGENCODING=UTF8
+      - PGLOCALE=en_US.UTF8
+      - PGUSERNAME=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - /Users/arsenykonovalov/programming_itmo/RSHD/lab4/slave/pg_data:/var/lib/postgresql/data
+    networks:
+      - brigada
+
+networks:
+  brigada:
+    driver: bridge
